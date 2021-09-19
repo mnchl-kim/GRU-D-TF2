@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.kears import Model
 from tensorflow.keras.layers import Layer, Dense, GRU
 from tensorflow.keras.constraints import Constraint
 
@@ -39,7 +40,7 @@ class TemporalDecay(Layer):
         return gamma
 
 
-class GRUD(Layer):
+class GRUD(Model):
     def __init__(self, hid_dim, dropout_rate, name='GRU-D', **kwargs):
         super(GRUD, self).__init__(name=name, **kwargs)
 
